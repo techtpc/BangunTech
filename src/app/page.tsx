@@ -31,9 +31,9 @@ export default function HomePage() {
         />
 
         <div className="max-w-[1280px] mx-auto w-full relative z-[1]">
-          <div className="grid grid-cols-[1.15fr_0.85fr] gap-[72px] max-lg:gap-10 items-center max-lg:grid-cols-1">
-            <div>
-              <div className="mb-6 flex items-center gap-[10px]">
+          <div className="grid grid-cols-[1fr_1fr] gap-16 max-lg:gap-10 items-center max-lg:grid-cols-1">
+            <div className="max-lg:text-center">
+              <div className="mb-6 flex items-center gap-[10px] max-lg:justify-center">
                 <div
                   className="w-2 h-2 rounded-full animate-[pulse_2s_infinite]"
                   style={{ background: "#22C55E", boxShadow: "0 0 10px #22C55E88" }}
@@ -60,14 +60,14 @@ export default function HomePage() {
                 yang Bertumbuh.
               </h1>
               <p
-                className="text-[clamp(15px,1.6vw,18px)] leading-[1.75] max-w-[520px] mb-10"
+                className="text-[clamp(15px,1.6vw,18px)] leading-[1.75] max-w-[520px] mb-10 max-lg:mx-auto"
                 style={{ color: "#4A6080" }}
               >
                 Dari platform keamanan properti berbasis AI hingga optimasi mesin
                 pencari — kami membangun teknologi yang benar-benar bekerja untuk
                 bisnis Indonesia.
               </p>
-              <div className="flex gap-3 flex-wrap mb-12">
+              <div className="flex gap-4 flex-wrap mb-12 max-lg:justify-center">
                 <Link href="/kontak">
                   <Btn>Konsultasi Gratis →</Btn>
                 </Link>
@@ -75,7 +75,7 @@ export default function HomePage() {
                   <Btn variant="outline">Lihat Semua Layanan</Btn>
                 </Link>
               </div>
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-3 flex-wrap max-lg:justify-center">
                 {SERVICES.map((s) => (
                   <Link
                     key={s.id}

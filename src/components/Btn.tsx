@@ -14,7 +14,7 @@ interface BtnProps {
 export default function Btn({ children, onClick, variant = "primary", full, small, style }: BtnProps) {
   const base =
     "inline-flex items-center justify-center rounded-[10px] font-bold tracking-[0.2px] cursor-pointer font-sans border-none transition-all duration-[0.22s]";
-  const size = small ? "px-6 py-[10px] text-[13px]" : "px-8 py-[14px] text-[14px]";
+  const size = small ? "px-7 py-[11px] text-[14px]" : "px-10 py-[16px] text-[15px]";
   const width = full ? "w-full" : "";
 
   const classes =
