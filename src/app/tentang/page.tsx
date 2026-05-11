@@ -131,7 +131,7 @@ export default function TentangPage() {
                 <span className="text-[22px]">{v.icon}</span>
                 <div>
                   <div
-                    className="font-extrabold text-[15px] mb-1"
+                    className="font-extrabold text-[15px] mb-2"
                     style={{ color: "#1A2B42" }}
                   >
                     {v.t}
