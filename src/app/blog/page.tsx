@@ -33,7 +33,7 @@ export default function BlogPage() {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-7 pt-16 pb-16">
+      <div className="max-w-[1280px] mx-auto px-7 pt-16 pb-16">
         {/* Featured */}
         <div
           className="bg-white rounded-[20px] p-10 max-md:p-7 mb-12 max-md:mb-8 grid grid-cols-[1fr_auto] gap-10 max-md:gap-6 items-center max-md:grid-cols-1"

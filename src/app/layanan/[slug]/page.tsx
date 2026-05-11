@@ -25,7 +25,7 @@ export default function ServiceDetailPage() {
           borderBottom: "1px solid #DDE6F5",
         }}
       >
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <Link
             href="/layanan"
             className="inline-flex items-center gap-[6px] text-[13px] font-semibold no-underline mb-4"
@@ -81,7 +81,7 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* Features */}
-      <div className="max-w-[1200px] mx-auto px-8 pt-[90px] pb-[90px]">
+      <div className="max-w-[1280px] mx-auto px-8 pt-[90px] pb-[90px]">
         <div className="grid grid-cols-[1fr_1fr] gap-12 mb-[90px] max-md:grid-cols-1">
           <div>
             <SectionHead

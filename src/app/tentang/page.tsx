@@ -36,7 +36,7 @@ export default function TentangPage() {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-7 pt-[72px] pb-[72px]">
+      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-[72px]">
         {/* Story */}
         <div className="grid grid-cols-[1fr_1fr] gap-16 mb-24 max-md:mb-16 max-md:gap-10 items-center max-md:grid-cols-1">
           <div>

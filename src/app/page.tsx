@@ -30,7 +30,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="max-w-[1200px] mx-auto w-full relative z-[1]">
+        <div className="max-w-[1280px] mx-auto w-full relative z-[1]">
           <div className="grid grid-cols-[1.15fr_0.85fr] gap-[72px] max-lg:gap-10 items-center max-lg:grid-cols-1">
             <div>
               <div className="mb-6 flex items-center gap-[10px]">
@@ -269,7 +269,7 @@ export default function HomePage() {
 
       {/* Services overview */}
       <section className="px-7 py-24" style={{ background: "#F8FAFF" }}>
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <SectionHead
             badge="Layanan Kami"
             title={
@@ -350,7 +350,7 @@ export default function HomePage() {
 
       {/* Process */}
       <section className="px-7 py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <SectionHead
             badge="Cara Kerja"
             title="Proses yang Terstruktur, Hasil yang Terukur"
@@ -415,7 +415,7 @@ export default function HomePage() {
 
       {/* Case study teaser */}
       <section className="px-7 py-24" style={{ background: "#F8FAFF" }}>
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <SectionHead
             badge="Hasil Nyata"
             title="Dipercaya oleh Bisnis yang Bertumbuh"

@@ -38,7 +38,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="px-7 pt-[72px] max-md:pt-12 pb-8" style={{ background: "#0A1628" }}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12 max-md:gap-8 mb-14 max-md:mb-10 max-lg:grid-cols-2">
           <div>
             <img

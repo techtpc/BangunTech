@@ -65,7 +65,7 @@ export default function StudiKasusPage() {
         </div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-7 pt-16 pb-16">
+      <div className="max-w-[1280px] mx-auto px-7 pt-16 pb-16">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-6">
           {filtered.map((c) => (
             <Card key={c.id} style={{ cursor: "default" }}>

@@ -51,7 +51,7 @@ export default function KontakPage() {
           borderBottom: "1px solid #DDE6F5",
         }}
       >
-        <div className="max-w-[1200px] mx-auto grid grid-cols-[1fr_1fr] gap-16 max-md:gap-10 items-center max-md:grid-cols-1">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-[1fr_1fr] gap-16 max-md:gap-10 items-center max-md:grid-cols-1">
           <div>
             <Badge>Hubungi Kami</Badge>
             <h1

@@ -34,13 +34,13 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 20px rgba(26,111,255,0.07)" : "none",
       }}
     >
-      <div className="max-w-[1200px] mx-auto px-7 h-[68px] flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-7 h-[68px] flex items-center justify-between">
         <Link href="/">
           <img src={LOGO} alt="BangunTech" className="h-10 cursor-pointer object-contain" />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-2">
           {/* Layanan dropdown */}
           <div
             className="relative"
@@ -48,7 +48,7 @@ export default function Navbar() {
             onMouseLeave={() => setSvcDD(false)}
           >
             <button
-              className="bg-none border-none cursor-pointer font-sans text-[13.5px] font-semibold px-[14px] py-2 rounded-[8px] flex items-center gap-1 transition-colors duration-200"
+              className="bg-none border-none cursor-pointer font-sans text-[13.5px] font-semibold px-[18px] py-2 rounded-[8px] flex items-center gap-1 transition-colors duration-200"
               style={{ color: "#4A6080" }}
             >
               Layanan <span className="text-[10px]">▾</span>
@@ -104,7 +104,7 @@ export default function Navbar() {
             <Link
               key={l.id}
               href={"/" + l.id}
-              className="bg-none border-none cursor-pointer font-sans text-[13.5px] font-semibold px-[14px] py-2 rounded-[8px] no-underline transition-colors duration-200 hover:text-[#1A6FFF]"
+              className="bg-none border-none cursor-pointer font-sans text-[13.5px] font-semibold px-[18px] py-2 rounded-[8px] no-underline transition-colors duration-200 hover:text-[#1A6FFF]"
               style={{ color: "#4A6080" }}
             >
               {l.l}

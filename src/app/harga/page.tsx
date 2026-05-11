@@ -113,7 +113,7 @@ export default function HargaPage() {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-7 pt-[72px] pb-[72px]">
+      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-[72px]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mb-[72px]">
           {tiers.map((t) => (
             <div

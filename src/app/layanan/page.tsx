@@ -34,7 +34,7 @@ export default function LayananPage() {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-7 pt-[72px] pb-[72px]">
+      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-[72px]">
         <div className="grid gap-8">
           {SERVICES.map((s) => (
             <div
