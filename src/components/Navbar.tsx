@@ -34,9 +34,9 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 20px rgba(26,111,255,0.07)" : "none",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-7 h-[68px] flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-7 h-[92px] flex items-center justify-between">
         <Link href="/">
-          <img src={LOGO} alt="BangunTech" className="h-14 max-md:h-10 cursor-pointer object-contain" />
+          <img src={LOGO} alt="BangunTech" className="h-20 max-md:h-14 cursor-pointer object-contain" />
         </Link>
 
         {/* Desktop */}

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { SERVICES, LOGO } from "@/data";
 
@@ -42,9 +45,10 @@ export default function Footer() {
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12 max-md:gap-8 mb-14 max-md:mb-10 max-lg:grid-cols-2">
           <div>
             <img
-              src={LOGO}
+              src="/logo-footer.png"
               alt="BangunTech"
-              className="h-14 max-md:h-10 mb-5 object-contain"
+              className="h-28 max-md:h-20 mb-5 object-contain"
+              style={{ mixBlendMode: "screen" }}
             />
             <p
               className="text-[13px] leading-[1.75] max-w-[300px] mb-7"
