@@ -44,7 +44,7 @@ export default function Footer() {
             <img
               src={LOGO}
               alt="BangunTech"
-              className="h-12 mb-5 object-contain brightness-0 invert-[0.9]"
+              className="h-14 max-md:h-10 mb-5 object-contain"
             />
             <p
               className="text-[13px] leading-[1.75] max-w-[300px] mb-7"

@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1280px] mx-auto px-7 h-[68px] flex items-center justify-between">
         <Link href="/">
-          <img src={LOGO} alt="BangunTech" className="h-10 cursor-pointer object-contain" />
+          <img src={LOGO} alt="BangunTech" className="h-14 max-md:h-10 cursor-pointer object-contain" />
         </Link>
 
         {/* Desktop */}

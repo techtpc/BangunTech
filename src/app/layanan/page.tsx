@@ -100,16 +100,30 @@ export default function LayananPage() {
                 >
                   {s.price}
                 </div>
-                <Link href={"/layanan/" + s.id}>
-                  <Btn
-                    style={{
-                      background: s.col,
-                      boxShadow: `0 4px 20px ${s.col}33`,
-                    }}
-                  >
-                    Detail Layanan →
-                  </Btn>
-                </Link>
+                <div className="flex gap-2">
+                  <Link href={"/layanan/" + s.id}>
+                    <Btn
+                      style={{
+                        background: s.col,
+                        boxShadow: `0 4px 20px ${s.col}33`,
+                      }}
+                    >
+                      Detail Layanan →
+                    </Btn>
+                  </Link>
+                  {s.id === "secureforce" && (
+                    <Link href="/demo">
+                      <Btn
+                        style={{
+                          background: "#f59e0b",
+                          boxShadow: "0 4px 20px rgba(245,158,11,0.4)",
+                        }}
+                      >
+                        🔴 Demo
+                      </Btn>
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}

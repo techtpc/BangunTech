@@ -1,4 +1,4 @@
-export const LOGO = "/logo.svg";
+export const LOGO = "/logo%20banguntech.png";
 
 export const C = {
   white: "#FFFFFF",

@@ -62,6 +62,18 @@ export default function ServiceDetailPage() {
                 <Link href="/harga">
                   <Btn variant="outline">Lihat Harga</Btn>
                 </Link>
+                {svc.id === "secureforce" && (
+                  <Link href="/demo">
+                    <Btn
+                      style={{
+                        background: "#f59e0b",
+                        boxShadow: "0 4px 20px rgba(245,158,11,0.4)",
+                      }}
+                    >
+                      🔴 Live Demo
+                    </Btn>
+                  </Link>
+                )}
               </div>
             </div>
             <div className="text-center max-md:hidden">

@@ -283,67 +283,145 @@ export default function HomePage() {
             sub="Tidak perlu melibatkan banyak vendor. Kami menyediakan solusi teknologi end-to-end yang dirancang khusus untuk kebutuhan bisnis Indonesia."
           />
           <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] gap-6">
-            {SERVICES.map((s) => (
-              <Link key={s.id} href={"/layanan/" + s.id} className="no-underline">
-                <Card>
-                  <div className="flex justify-between items-start mb-5">
-                    <div
-                      className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center text-[24px]"
-                      style={{
-                        background: `${s.col}12`,
-                        border: `1.5px solid ${s.col}22`,
-                      }}
-                    >
-                      {s.icon}
+            {SERVICES.map((s) =>
+              s.id === "secureforce" ? (
+                <div key={s.id}>
+                  <Card>
+                    <div className="flex justify-between items-start mb-5">
+                      <div
+                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center text-[24px]"
+                        style={{
+                          background: `${s.col}12`,
+                          border: `1.5px solid ${s.col}22`,
+                        }}
+                      >
+                        {s.icon}
+                      </div>
+                      {s.badge && (
+                        <Badge color={s.badge === "NEW" ? "#22C55E" : s.col} small>
+                          {s.badge}
+                        </Badge>
+                      )}
                     </div>
-                    {s.badge && (
-                      <Badge color={s.badge === "NEW" ? "#22C55E" : s.col} small>
-                        {s.badge}
-                      </Badge>
-                    )}
-                  </div>
-                  <div
-                    className="text-[10px] font-bold tracking-[1.5px] uppercase mb-1"
-                    style={{ color: s.col }}
-                  >
-                    {s.sub}
-                  </div>
-                  <h3
-                    className="text-[18px] font-extrabold mb-3"
-                    style={{ color: "#1A2B42" }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p
-                    className="text-[13.5px] leading-[1.65] mb-5"
-                    style={{ color: "#4A6080" }}
-                  >
-                    {s.desc.substring(0, 120)}...
-                  </p>
-                  <div
-                    className="flex justify-between items-center pt-5"
-                    style={{ borderTop: "1px solid #DDE6F5" }}
-                  >
-                    <span
-                      className="font-extrabold text-[14px]"
+                    <div
+                      className="text-[10px] font-bold tracking-[1.5px] uppercase mb-1"
                       style={{ color: s.col }}
                     >
-                      {s.price}
-                    </span>
-                    <button
-                      className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
-                      style={{
-                        background: `${s.col}10`,
-                        border: `1.5px solid ${s.col}30`,
-                        color: s.col,
-                      }}
+                      {s.sub}
+                    </div>
+                    <h3
+                      className="text-[18px] font-extrabold mb-3"
+                      style={{ color: "#1A2B42" }}
                     >
-                      Detail →
-                    </button>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+                      {s.title}
+                    </h3>
+                    <p
+                      className="text-[13.5px] leading-[1.65] mb-5"
+                      style={{ color: "#4A6080" }}
+                    >
+                      {s.desc.substring(0, 120)}...
+                    </p>
+                    <div
+                      className="flex justify-between items-center pt-5"
+                      style={{ borderTop: "1px solid #DDE6F5" }}
+                    >
+                      <span
+                        className="font-extrabold text-[14px]"
+                        style={{ color: s.col }}
+                      >
+                        {s.price}
+                      </span>
+                      <div className="flex gap-2">
+                        <Link href={"/layanan/" + s.id}>
+                          <button
+                            className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
+                            style={{
+                              background: `${s.col}10`,
+                              border: `1.5px solid ${s.col}30`,
+                              color: s.col,
+                            }}
+                          >
+                            Detail →
+                          </button>
+                        </Link>
+                        <Link href="/demo">
+                          <button
+                            className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
+                            style={{
+                              background: "#f59e0b20",
+                              border: "1.5px solid #f59e0b50",
+                              color: "#f59e0b",
+                            }}
+                          >
+                            🔴 Demo
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              ) : (
+                <Link key={s.id} href={"/layanan/" + s.id} className="no-underline">
+                  <Card>
+                    <div className="flex justify-between items-start mb-5">
+                      <div
+                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center text-[24px]"
+                        style={{
+                          background: `${s.col}12`,
+                          border: `1.5px solid ${s.col}22`,
+                        }}
+                      >
+                        {s.icon}
+                      </div>
+                      {s.badge && (
+                        <Badge color={s.badge === "NEW" ? "#22C55E" : s.col} small>
+                          {s.badge}
+                        </Badge>
+                      )}
+                    </div>
+                    <div
+                      className="text-[10px] font-bold tracking-[1.5px] uppercase mb-1"
+                      style={{ color: s.col }}
+                    >
+                      {s.sub}
+                    </div>
+                    <h3
+                      className="text-[18px] font-extrabold mb-3"
+                      style={{ color: "#1A2B42" }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p
+                      className="text-[13.5px] leading-[1.65] mb-5"
+                      style={{ color: "#4A6080" }}
+                    >
+                      {s.desc.substring(0, 120)}...
+                    </p>
+                    <div
+                      className="flex justify-between items-center pt-5"
+                      style={{ borderTop: "1px solid #DDE6F5" }}
+                    >
+                      <span
+                        className="font-extrabold text-[14px]"
+                        style={{ color: s.col }}
+                      >
+                        {s.price}
+                      </span>
+                      <button
+                        className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
+                        style={{
+                          background: `${s.col}10`,
+                          border: `1.5px solid ${s.col}30`,
+                          color: s.col,
+                        }}
+                      >
+                        Detail →
+                      </button>
+                    </div>
+                  </Card>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </section>

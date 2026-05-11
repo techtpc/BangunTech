@@ -32,7 +32,7 @@ export default function KontakPage() {
 
   const contactInfo = [
     { ic: "📧", l: "Email", v: "hello@banguntech.id" },
-    { ic: "📱", l: "WhatsApp", v: "+62 8xx-xxxx-xxxx" },
+    { ic: "📱", l: "WhatsApp", v: "+62 812-3018-28" },
     { ic: "📍", l: "Kantor", v: "Jakarta · Bandung · Remote-first" },
     {
       ic: "🕐",
