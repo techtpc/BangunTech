@@ -1,55 +1,54 @@
 @import "tailwindcss";
+@source "../";
 
 @theme inline {
   --font-sans: "Inter", -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  background: #fff;
-  color: #1A2B42;
-  font-family: "Inter", -apple-system, sans-serif;
-  line-height: 1.7;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-input::placeholder,
-textarea::placeholder {
-  color: #8BA0BA;
-}
+  body {
+    background: #fff;
+    color: #1A2B42;
+    font-family: "Inter", -apple-system, sans-serif;
+    line-height: 1.7;
+  }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #1A6fff !important;
-  outline: none;
-}
+  input::placeholder,
+  textarea::placeholder {
+    color: #8BA0BA;
+  }
 
-select option {
-  background: #fff;
-  color: #1A2B42;
-}
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #1A6fff !important;
+    outline: none;
+  }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
+  select option {
+    background: #fff;
+    color: #1A2B42;
+  }
 
-::-webkit-scrollbar-track {
-  background: #f8faff;
-}
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #1a6fff44;
-  border-radius: 3px;
+  ::-webkit-scrollbar-track {
+    background: #f8faff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a6fff44;
+    border-radius: 3px;
+  }
 }
 
 @keyframes pulse {
