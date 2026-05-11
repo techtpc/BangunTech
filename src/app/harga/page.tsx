@@ -206,7 +206,7 @@ export default function HargaPage() {
               </div>
               <Link href="/kontak">
                 <button
-                  className="w-full py-[13px] rounded-[10px] text-[14px] font-extrabold cursor-pointer font-sans"
+                  className="w-full py-[14px] rounded-[10px] text-[14px] font-extrabold cursor-pointer font-sans"
                   style={{
                     background: t.highlight
                       ? "linear-gradient(135deg,#1A6FFF,#00B4FF)"

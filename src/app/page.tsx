@@ -80,7 +80,7 @@ export default function HomePage() {
                   <Link
                     key={s.id}
                     href={"/layanan/" + s.id}
-                    className="px-[14px] py-[6px] rounded-[999px] text-[12px] font-semibold no-underline transition-all duration-200 hover:border-[#1A6FFF] hover:text-[#1A6FFF]"
+                    className="px-[18px] py-[8px] rounded-[999px] text-[12px] font-semibold no-underline transition-all duration-200 hover:border-[#1A6FFF] hover:text-[#1A6FFF]"
                     style={{
                       background: "#F8FAFF",
                       border: "1px solid #DDE6F5",
@@ -331,7 +331,7 @@ export default function HomePage() {
                       {s.price}
                     </span>
                     <button
-                      className="rounded-[8px] px-[14px] py-[7px] text-[12px] font-bold cursor-pointer font-sans"
+                      className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
                       style={{
                         background: `${s.col}10`,
                         border: `1.5px solid ${s.col}30`,
