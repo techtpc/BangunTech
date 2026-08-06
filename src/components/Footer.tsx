@@ -24,7 +24,7 @@ const footerCols = [
     title: "Hubungi",
     items: [
       { l: "Kontak", p: "/kontak" },
-      { l: "hello@banguntech.id", p: "/kontak" },
+      { l: "halo.banguntech@gmail.com", p: "/kontak" },
       { l: "WhatsApp", p: "/kontak" },
       { l: "Privasi", p: "/kontak" },
       { l: "Syarat & Ketentuan", p: "/kontak" },

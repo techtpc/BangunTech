@@ -32,7 +32,7 @@ export default function KontakPage() {
   };
 
   const contactInfo = [
-    { ic: "mail", l: "Email", v: "hello@banguntech.id" },
+    { ic: "mail", l: "Email", v: "halo.banguntech@gmail.com" },
     { ic: "whatsapp", l: "WhatsApp", v: "+62 898-9891-828" },
     { ic: "location", l: "Kantor", v: "Jakarta · Bandung · Remote-first" },
     {
