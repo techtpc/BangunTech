@@ -13,11 +13,11 @@ export default function Card({ children, style = {}, hover = true }: CardProps) 
 
   return (
     <div
-      className="bg-white rounded-[16px] p-8 max-md:p-6 transition-all duration-[0.25s]"
+      className="bg-white rounded-[18px] p-8 max-md:p-6 transition-all duration-300 ease-out"
       style={{
-        border: `1.5px solid ${hov && hover ? "#1A6FFF44" : "#DDE6F5"}`,
-        boxShadow: hov && hover ? "0 6px 36px rgba(26,111,255,0.14)" : "0 2px 20px rgba(26,111,255,0.09)",
-        transform: hov && hover ? "translateY(-3px)" : "none",
+        border: `1.5px solid ${hov && hover ? "#1A6FFF44" : "#E2E8F0"}`,
+        boxShadow: hov && hover ? "0 20px 40px -12px rgba(26,111,255,0.15)" : "0 4px 24px rgba(15,23,42,0.05)",
+        transform: hov && hover ? "translateY(-6px)" : "none",
         ...style,
       }}
       onMouseEnter={() => hover && setHov(true)}

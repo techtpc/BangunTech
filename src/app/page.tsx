@@ -6,6 +6,7 @@ import Btn from "@/components/Btn";
 import Badge from "@/components/Badge";
 import SectionHead from "@/components/SectionHead";
 import Card from "@/components/Card";
+import Icon from "@/components/Icon";
 
 export default function HomePage() {
   return (
@@ -80,14 +81,14 @@ export default function HomePage() {
                   <Link
                     key={s.id}
                     href={"/layanan/" + s.id}
-                    className="px-[18px] py-[8px] rounded-[999px] text-[12px] font-semibold no-underline transition-all duration-200 hover:border-[#1A6FFF] hover:text-[#1A6FFF]"
+                    className="px-[18px] py-[8px] rounded-[999px] text-[12px] font-semibold no-underline transition-all duration-200 hover:border-[#1A6FFF] hover:text-[#1A6FFF] flex items-center gap-2"
                     style={{
                       background: "#F8FAFF",
                       border: "1px solid #DDE6F5",
                       color: "#4A6080",
                     }}
                   >
-                    {s.icon} {s.title}
+                    <Icon name={s.id} size={14} color={s.col} /> {s.title}
                   </Link>
                 ))}
               </div>
@@ -289,13 +290,13 @@ export default function HomePage() {
                   <Card>
                     <div className="flex justify-between items-start mb-5">
                       <div
-                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center text-[24px]"
+                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center"
                         style={{
                           background: `${s.col}12`,
                           border: `1.5px solid ${s.col}22`,
                         }}
                       >
-                        {s.icon}
+                        <Icon name={s.id} size={24} color={s.col} />
                       </div>
                       {s.badge && (
                         <Badge color={s.badge === "NEW" ? "#22C55E" : s.col} small>
@@ -346,14 +347,14 @@ export default function HomePage() {
                         </Link>
                         <Link href="/demo">
                           <button
-                            className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans"
+                            className="rounded-[8px] px-[18px] py-[9px] text-[12px] font-bold cursor-pointer font-sans flex items-center gap-1.5"
                             style={{
                               background: "#f59e0b20",
                               border: "1.5px solid #f59e0b50",
                               color: "#f59e0b",
                             }}
                           >
-                            🔴 Demo
+                            <Icon name="play" size={13} color="#f59e0b" /> Demo
                           </button>
                         </Link>
                       </div>
@@ -365,13 +366,13 @@ export default function HomePage() {
                   <Card>
                     <div className="flex justify-between items-start mb-5">
                       <div
-                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center text-[24px]"
+                        className="w-[50px] h-[50px] rounded-[12px] flex items-center justify-center"
                         style={{
                           background: `${s.col}12`,
                           border: `1.5px solid ${s.col}22`,
                         }}
                       >
-                        {s.icon}
+                        <Icon name={s.id} size={24} color={s.col} />
                       </div>
                       {s.badge && (
                         <Badge color={s.badge === "NEW" ? "#22C55E" : s.col} small>

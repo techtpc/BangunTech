@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { SERVICES, LOGO } from "@/data";
+import BrandIcon from "./BrandIcon";
 
 const footerCols = [
   {
@@ -32,10 +33,10 @@ const footerCols = [
 ];
 
 const socials = [
-  { l: "IG", h: "#" },
-  { l: "YT", h: "#" },
-  { l: "TT", h: "#" },
-  { l: "LI", h: "#" },
+  { l: "Instagram", h: "#" },
+  { l: "Youtube", h: "#" },
+  { l: "Tiktok", h: "#" },
+  { l: "Linkedin", h: "#" },
 ];
 
 export default function Footer() {
@@ -58,19 +59,19 @@ export default function Footer() {
               <br />
               Mitra teknologi terpercaya untuk bisnis Indonesia yang ingin bertumbuh di era digital.
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               {socials.map((s) => (
                 <a
                   key={s.l}
                   href={s.h}
-                  className="w-9 h-9 rounded-[7px] flex items-center justify-center text-[11px] font-extrabold no-underline transition-all duration-200"
+                  className="w-10 h-10 rounded-[10px] flex items-center justify-center no-underline transition-all duration-200 hover:bg-white/15"
                   style={{
                     background: "rgba(255,255,255,0.07)",
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    color: "rgba(255,255,255,0.55)",
+                    border: "1px solid rgba(255,255,255,0.12)",
                   }}
+                  title={s.l}
                 >
-                  {s.l}
+                  <BrandIcon name={s.l} size={18} color="#ffffff" />
                 </a>
               ))}
             </div>
@@ -100,10 +101,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
         >
           <div className="text-[12px]" style={{ color: "rgba(255,255,255,0.35)" }}>
-            © {new Date().getFullYear()} BangunTech · Divisi dari{" "}
-            <span className="font-bold" style={{ color: "#00B4FF" }}>
-              The Pitch Creative Media
-            </span>
+            © {new Date().getFullYear()} BangunTech. All rights reserved.
           </div>
           <div className="text-[12px]" style={{ color: "rgba(255,255,255,0.35)" }}>
             Jakarta · Indonesia

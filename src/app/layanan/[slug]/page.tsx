@@ -8,6 +8,7 @@ import Badge from "@/components/Badge";
 import SectionHead from "@/components/SectionHead";
 import Card from "@/components/Card";
 import Divider from "@/components/Divider";
+import Icon from "@/components/Icon";
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -70,7 +71,7 @@ export default function ServiceDetailPage() {
                         boxShadow: "0 4px 20px rgba(245,158,11,0.4)",
                       }}
                     >
-                      🔴 Live Demo
+                      <span className="flex items-center gap-1.5"><Icon name="play" size={15} color="#fff" /> Live Demo</span>
                     </Btn>
                   </Link>
                 )}
@@ -78,14 +79,14 @@ export default function ServiceDetailPage() {
             </div>
             <div className="text-center max-md:hidden">
               <div
-                className="w-[120px] h-[120px] rounded-[28px] flex items-center justify-center text-[60px]"
+                className="w-[120px] h-[120px] rounded-[28px] flex items-center justify-center"
                 style={{
                   background: `${svc.col}18`,
                   border: `3px solid ${svc.col}33`,
                   boxShadow: `0 8px 40px ${svc.col}22`,
                 }}
               >
-                {svc.icon}
+                <Icon name={svc.id} size={56} color={svc.col} />
               </div>
             </div>
           </div>
@@ -249,10 +250,10 @@ export default function ServiceDetailPage() {
                 <Card>
                   <div className="flex gap-3 items-center mb-3">
                     <div
-                      className="w-10 h-10 rounded-[10px] flex items-center justify-center text-[20px]"
+                      className="w-10 h-10 rounded-[10px] flex items-center justify-center"
                       style={{ background: `${s.col}12` }}
                     >
-                      {s.icon}
+                      <Icon name={s.id} size={20} color={s.col} />
                     </div>
                     <div
                       className="font-extrabold text-[15px]"

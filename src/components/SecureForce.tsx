@@ -15,6 +15,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import * as XLSX from "xlsx";
+import Icon from "./Icon";
 
 // ─── INITIAL DATA ─────────────────────────────────────────────────────────────
 const INITIAL_GUARDS = [
@@ -69,14 +70,21 @@ const generateId = (prefix, existing) => {
 };
 
 // ─── REUSABLE COMPONENTS ──────────────────────────────────────────────────────
-function Badge({ children, color = "#f59e0b", size = "sm" }) {
+function Badge({ children, type = "default" }) {
+  const styles = {
+    default: { bg: "rgba(100,116,139,0.15)", border: "rgba(100,116,139,0.3)", color: "#cbd5e1" },
+    success: { bg: "rgba(34,197,94,0.15)", border: "rgba(34,197,94,0.3)", color: "#4ade80" },
+    warning: { bg: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.3)", color: "#fbbf24" },
+    danger: { bg: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.3)", color: "#f87171" },
+    blue: { bg: "rgba(59,130,246,0.15)", border: "rgba(59,130,246,0.3)", color: "#60a5fa" },
+    purple: { bg: "rgba(139,92,246,0.15)", border: "rgba(139,92,246,0.3)", color: "#c084fc" },
+  };
+  const s = styles[type] || styles.default;
   return (
     <span style={{
-      background: `${color}22`, color, border: `1px solid ${color}44`,
-      borderRadius: 4, padding: size === "sm" ? "2px 8px" : "4px 12px",
-      fontSize: size === "sm" ? 11 : 12, fontWeight: 700,
-      letterSpacing: "0.5px", textTransform: "uppercase",
-      whiteSpace: "nowrap", display: "inline-block",
+      background: s.bg, border: `1px solid ${s.border}`, color: s.color,
+      borderRadius: 999, padding: "3px 10px", fontSize: 11, fontWeight: 700,
+      letterSpacing: "0.5px", textTransform: "uppercase", display: "inline-block",
     }}>{children}</span>
   );
 }
@@ -90,7 +98,9 @@ function StatCard({ icon, label, value, sub, accent = "#f59e0b" }) {
       position: "relative", overflow: "hidden",
     }}>
       <div style={{ position: "absolute", top: 0, left: 0, width: 3, height: "100%", background: accent }} />
-      <div style={{ fontSize: 22 }}>{icon}</div>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        {typeof icon === "string" ? <Icon name={icon} size={22} color={accent} /> : icon}
+      </div>
       <div style={{ color: "#94a3b8", fontSize: 12, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>{label}</div>
       <div style={{ color: "#f1f5f9", fontSize: 28, fontWeight: 800, lineHeight: 1 }}>{value}</div>
       {sub && <div style={{ color: "#64748b", fontSize: 12 }}>{sub}</div>}
@@ -496,10 +506,10 @@ function SmartAttendancePage({ guards, clusters, attendance, setAttendance }) {
       <p style={{ color: "#64748b", marginBottom: 24, fontSize: 14 }}>Zero manual input · 100% transparant · Multi-method verification</p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 24 }}>
-        <StatCard icon="✅" label="Hadir Hari Ini" value={`${presentCount}/${totalActive}`} sub={`${Math.round(presentCount/totalActive*100)}% kehadiran`} accent="#22c55e" />
-        <StatCard icon="🤖" label="Auto-detected" value={todayAttendance.filter(a => a.method === "face").length} sub="Via Face Recognition" accent="#3b82f6" />
-        <StatCard icon="📍" label="GPS Verified" value={todayAttendance.filter(a => a.method === "gps").length} sub="Geofence check-in" accent="#8b5cf6" />
-        <StatCard icon="⏰" label="Terlambat" value={todayAttendance.filter(a => a.late).length} sub="Lewat dari 06:10" accent="#f59e0b" />
+        <StatCard icon="check" label="Hadir Hari Ini" value={`${presentCount}/${totalActive}`} sub={`${Math.round(presentCount/totalActive*100)}% kehadiran`} accent="#22c55e" />
+        <StatCard icon="bot" label="Auto-detected" value={todayAttendance.filter(a => a.method === "face").length} sub="Via Face Recognition" accent="#3b82f6" />
+        <StatCard icon="location" label="GPS Verified" value={todayAttendance.filter(a => a.method === "gps").length} sub="Geofence check-in" accent="#8b5cf6" />
+        <StatCard icon="clock" label="Terlambat" value={todayAttendance.filter(a => a.late).length} sub="Lewat dari 06:10" accent="#f59e0b" />
       </div>
 
       {/* Method Selector */}
@@ -789,11 +799,11 @@ function ReportsPage({ user, clusters, guards, attendance }) {
   }, []);
 
   const reportTypes = [
-    { id: "attendance", icon: "📋", title: "Laporan Absensi", desc: "Detail kehadiran semua security per properti" },
-    { id: "performance", icon: "📊", title: "Laporan Performa", desc: "Penilaian KPI dan rating security" },
-    { id: "financial", icon: "💰", title: "Laporan Tagihan", desc: "Breakdown management fee & gaji security" },
-    { id: "incidents", icon: "🚨", title: "Laporan Insiden", desc: "Daftar laporan & kejadian dari aplikasi warga" },
-    { id: "summary", icon: "📑", title: "Laporan Lengkap", desc: "Semua di atas dalam satu dokumen" },
+    { id: "attendance", icon: "file-text", title: "Laporan Absensi", desc: "Detail kehadiran semua security per properti" },
+    { id: "performance", icon: "chart", title: "Laporan Performa", desc: "Penilaian KPI dan rating security" },
+    { id: "financial", icon: "credit-card", title: "Laporan Tagihan", desc: "Breakdown management fee & gaji security" },
+    { id: "incidents", icon: "alert", title: "Laporan Insiden", desc: "Daftar laporan & kejadian dari aplikasi warga" },
+    { id: "summary", icon: "file-text", title: "Laporan Lengkap", desc: "Semua di atas dalam satu dokumen" },
   ];
 
   // ─── PDF GENERATOR ─────────────────────────────────────────────────────────
@@ -924,7 +934,7 @@ function ReportsPage({ user, clusters, guards, attendance }) {
         doc.setPage(i);
         doc.setFontSize(8);
         doc.setTextColor(150, 150, 150);
-        doc.text(`SecureForce OMS · Powered by TPC Media · Page ${i}/${pages}`, 14, 290);
+        doc.text(`SecureForce OMS · Powered by BangunTech · Page ${i}/${pages}`, 14, 290);
       }
 
       const filename = `SecureForce_${reportType}_${dateRange.from}_${user.name.replace(/\s/g, "_")}.pdf`;
@@ -1066,7 +1076,9 @@ function ReportsPage({ user, clusters, guards, attendance }) {
             borderRadius: 12, padding: 18, cursor: "pointer",
             transition: "all 0.2s",
           }}>
-            <div style={{ fontSize: 24, marginBottom: 8 }}>{rt.icon}</div>
+            <div style={{ marginBottom: 10 }}>
+              <Icon name={rt.icon} size={22} color={reportType === rt.id ? "#22c55e" : "#94a3b8"} />
+            </div>
             <div style={{ fontWeight: 800, fontSize: 14, marginBottom: 4, color: reportType === rt.id ? "#22c55e" : "#fff" }}>{rt.title}</div>
             <div style={{ color: "#94a3b8", fontSize: 12, lineHeight: 1.5 }}>{rt.desc}</div>
           </div>
@@ -1593,10 +1605,10 @@ function OutsourceDashboard({ user, onLogout, state, setState }) {
             <h1 style={{ fontSize: 24, fontWeight: 800, marginBottom: 4 }}>Dashboard Overview</h1>
             <p style={{ color: "#64748b", marginBottom: 32, fontSize: 14 }}>Real-time monitoring · {today()}</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 24 }}>
-              <StatCard icon="👮" label="Total Security" value={state.guards.length} sub={`${state.attendance.filter(a => a.date === today() && a.status === "hadir").length} hadir`} />
-              <StatCard icon="🏢" label="Properti" value={state.clusters.length} sub="Aktif" accent="#22c55e" />
-              <StatCard icon="📹" label="Kamera" value={state.cameras.length} sub={`${state.cameras.filter(c => c.status === "online").length} online`} accent="#3b82f6" />
-              <StatCard icon="🚧" label="Gate" value={state.gates.length} sub="Terkonfigurasi" accent="#8b5cf6" />
+              <StatCard icon="users" label="Total Security" value={state.guards.length} sub={`${state.attendance.filter(a => a.date === today() && a.status === "hadir").length} hadir`} />
+              <StatCard icon="building" label="Properti" value={state.clusters.length} sub="Aktif" accent="#22c55e" />
+              <StatCard icon="cctv" label="Kamera" value={state.cameras.length} sub={`${state.cameras.filter(c => c.status === "online").length} online`} accent="#3b82f6" />
+              <StatCard icon="lock" label="Gate" value={state.gates.length} sub="Terkonfigurasi" accent="#8b5cf6" />
             </div>
 
             <div style={{ background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.2)", borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -1733,10 +1745,10 @@ function ClientDashboard({ user, onLogout, state }) {
             <p style={{ color: "#64748b", marginBottom: 32, fontSize: 14 }}>{today()} · {myClusters.length} properti</p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 24 }}>
-              <StatCard icon="🏢" label="Properti" value={myClusters.length} accent="#22c55e" />
-              <StatCard icon="👮" label="Security" value={myGuards.length} sub={`${todayHadir} hadir`} />
-              <StatCard icon="📹" label="CCTV" value={myCameras.length} accent="#3b82f6" />
-              <StatCard icon="💸" label="Tagihan" value={fmtK(totalBill)} sub="/ bulan" accent="#8b5cf6" />
+              <StatCard icon="building" label="Properti" value={myClusters.length} accent="#22c55e" />
+              <StatCard icon="users" label="Security" value={myGuards.length} sub={`${todayHadir} hadir`} />
+              <StatCard icon="cctv" label="CCTV" value={myCameras.length} accent="#3b82f6" />
+              <StatCard icon="credit-card" label="Tagihan" value={fmtK(totalBill)} sub="/ bulan" accent="#8b5cf6" />
             </div>
 
             {/* Reports CTA */}

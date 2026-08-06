@@ -1,15 +1,13 @@
-import { TEAM } from "@/data";
-import Btn from "@/components/Btn";
 import Badge from "@/components/Badge";
-import SectionHead from "@/components/SectionHead";
-import Card from "@/components/Card";
+import Icon from "@/components/Icon";
+import Btn from "@/components/Btn";
 import Link from "next/link";
 
 export default function TentangPage() {
   return (
     <div className="pt-[68px]">
       <div
-        className="px-7 pt-20 pb-16 text-center"
+        className="px-7 pt-24 pb-16 text-center"
         style={{
           background: "linear-gradient(135deg,#F8FAFF,#EEF8FF)",
           borderBottom: "1px solid #DDE6F5",
@@ -30,28 +28,26 @@ export default function TentangPage() {
           className="text-[17px] max-w-[580px] mx-auto leading-[1.75]"
           style={{ color: "#4A6080" }}
         >
-          BangunTech adalah divisi teknologi dari The Pitch Creative Media,
-          didirikan dengan satu tujuan: membantu bisnis Indonesia bertumbuh
-          melalui teknologi yang tepat guna.
+          BangunTech didirikan dengan satu tujuan: membantu bisnis Indonesia bertumbuh melalui teknologi yang tepat guna.
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-[72px]">
+      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-[96px]">
         {/* Story */}
-        <div className="grid grid-cols-[1fr_1fr] gap-16 mb-24 max-md:mb-16 max-md:gap-10 items-center max-md:grid-cols-1">
+        <div className="grid grid-cols-[1fr_1fr] gap-16 max-md:gap-10 items-center max-md:grid-cols-1 mb-20">
           <div>
             <Badge color="#22C55E">Kisah Kami</Badge>
             <h2
               className="text-[clamp(26px,3.5vw,40px)] font-black tracking-[-1px] mt-4 mb-5 leading-[1.1]"
               style={{ color: "#1A2B42" }}
             >
-              Dari Agensi Kreatif
+              Mitra Teknologi
               <br />
-              Menjadi Mitra Teknologi
+              Untuk Bisnis Anda
             </h2>
             <p
               className="text-[15px] leading-[1.8] mb-5"
-              style={{ color: "#4A6080" }}
+              style={{ color: "#334155" }}
             >
               BangunTech lahir dari pengamatan mendalam bahwa banyak bisnis di
               Indonesia — terutama di sektor properti, keamanan, dan UMKM —
@@ -60,7 +56,7 @@ export default function TentangPage() {
             </p>
             <p
               className="text-[15px] leading-[1.8] mb-8"
-              style={{ color: "#4A6080" }}
+              style={{ color: "#334155" }}
             >
               Kami tidak hanya membangun perangkat lunak. Kami menjadi mitra
               strategis yang memahami konteks bisnis klien dari dalam — mulai
@@ -95,6 +91,7 @@ export default function TentangPage() {
             style={{
               background: "linear-gradient(135deg,#EEF3FC,#EEF8FF)",
               border: "1.5px solid #DDE6F5",
+              boxShadow: "0 10px 40px -10px rgba(26,111,255,0.08)",
             }}
           >
             <div
@@ -105,17 +102,17 @@ export default function TentangPage() {
             </div>
             {[
               {
-                icon: "🔭",
+                icon: "visi",
                 t: "Visi",
                 d: "Menjadi mitra teknologi pilihan utama bagi bisnis di Indonesia yang ingin memanfaatkan kecerdasan buatan dan otomasi untuk tumbuh lebih efisien.",
               },
               {
-                icon: "🎯",
+                icon: "misi",
                 t: "Misi",
                 d: "Membangun solusi teknologi yang relevan, terjangkau, dan memberikan dampak nyata bagi operasional dan pendapatan bisnis klien kami.",
               },
               {
-                icon: "💡",
+                icon: "nilai",
                 t: "Nilai",
                 d: "Transparansi, integritas teknis, dan kemitraan jangka panjang adalah fondasi setiap hubungan yang kami bangun dengan klien.",
               },
@@ -128,7 +125,12 @@ export default function TentangPage() {
                     i < 2 ? "1px solid #DDE6F5" : "none",
                 }}
               >
-                <span className="text-[22px]">{v.icon}</span>
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: "#1A6FFF12", border: "1px solid #1A6FFF22" }}
+                >
+                  <Icon name={v.icon} size={20} color="#1A6FFF" />
+                </div>
                 <div>
                   <div
                     className="font-extrabold text-[15px] mb-2"
@@ -148,94 +150,25 @@ export default function TentangPage() {
           </div>
         </div>
 
-        {/* Team */}
-        <SectionHead
-          badge="Tim Kami"
-          title="Orang-orang di Balik BangunTech"
-          sub="Tim multidisiplin dengan keahlian di teknologi, desain, konten, dan manajemen bisnis."
-        />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 mb-[72px]">
-          {TEAM.map((m) => (
-            <Card key={m.name} style={{ textAlign: "center" }}>
-              <div
-                className="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-[32px]"
-                style={{
-                  background: "#1A6FFF12",
-                  border: "2px solid #DDE6F5",
-                }}
-              >
-                {m.img}
-              </div>
-              <div
-                className="font-extrabold text-[16px] mb-2"
-                style={{ color: "#1A2B42" }}
-              >
-                {m.name}
-              </div>
-              <div
-                className="text-[11px] font-bold tracking-[0.5px] mb-4"
-                style={{ color: "#1A6FFF" }}
-              >
-                {m.role}
-              </div>
-              <p
-                className="text-[12.5px] leading-[1.65]"
-                style={{ color: "#4A6080" }}
-              >
-                {m.bio}
-              </p>
-            </Card>
-          ))}
-        </div>
-
-        {/* Connection to TPC */}
+        {/* CTA Banner */}
         <div
-          className="rounded-[20px] p-10 max-md:p-7 flex justify-between items-center flex-wrap gap-8"
+          className="rounded-[24px] p-12 max-md:p-8 flex justify-between items-center flex-wrap gap-8"
           style={{
-            background: "linear-gradient(135deg,#F8FAFF,#EEF8FF)",
-            border: "1.5px solid #DDE6F5",
+            background: "linear-gradient(135deg, #0A1628, #1A2B42)",
+            boxShadow: "0 20px 50px -15px rgba(10,22,40,0.4)",
           }}
         >
-          <div className="max-w-[600px]">
-            <div
-              className="text-[10px] font-bold tracking-[2px] uppercase mb-3"
-              style={{ color: "#1A6FFF" }}
-            >
-              Entitas Induk
-            </div>
-            <h3
-              className="text-[clamp(20px,3vw,30px)] font-black mb-3 tracking-[-0.5px]"
-              style={{ color: "#1A2B42" }}
-            >
-              The Pitch Creative Media
+          <div className="max-w-[560px]">
+            <Badge color="#00B4FF">Konsultasi Gratis</Badge>
+            <h3 className="text-[clamp(22px,3vw,32px)] font-black text-white mt-3 mb-3 tracking-[-0.5px]">
+              Siap Bertransformasi Bersama BangunTech?
             </h3>
-            <p
-              className="text-[14px] leading-[1.75] mb-4"
-              style={{ color: "#4A6080" }}
-            >
-              BangunTech beroperasi sebagai divisi teknologi dari The Pitch
-              Creative Media (TPC Media) — agensi kreatif dan digital yang
-              berbasis di Jakarta dengan spesialisasi di AI content, social media
-              management, dan digital advertising.
+            <p className="text-[14.5px] leading-[1.7] text-slate-300">
+              Diskusikan tantangan operasional dan kebutuhan teknologi bisnis Anda bersama tim pakar kami.
             </p>
-            <div className="flex gap-4 flex-wrap">
-              {[
-                "🌐 thepitchcreative.media",
-                "📸 @tpcmedia_",
-                "▶️ @thepitchcreativemedia",
-              ].map((s) => (
-                <span
-                  key={s}
-                  className="text-[12px] font-semibold"
-                  style={{ color: "#8BA0BA" }}
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
           </div>
-          <Link href="/kontak">
-            <Btn>Hubungi Tim Kami →</Btn>
+          <Link href="/kontak" className="no-underline">
+            <Btn>Mulai Konsultasi →</Btn>
           </Link>
         </div>
       </div>

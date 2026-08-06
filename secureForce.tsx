@@ -924,7 +924,7 @@ function ReportsPage({ user, clusters, guards, attendance }) {
         doc.setPage(i);
         doc.setFontSize(8);
         doc.setTextColor(150, 150, 150);
-        doc.text(`SecureForce OMS · Powered by TPC Media · Page ${i}/${pages}`, 14, 290);
+        doc.text(`SecureForce OMS · Powered by BangunTech · Page ${i}/${pages}`, 14, 290);
       }
 
       const filename = `SecureForce_${reportType}_${dateRange.from}_${user.name.replace(/\s/g, "_")}.pdf`;

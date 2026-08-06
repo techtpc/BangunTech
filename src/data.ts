@@ -286,11 +286,3 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "10 menit",
   },
 ];
-
-export const TEAM = [
-  { name: "Ricko", role: "CEO & Founder · The Architect", img: "👨‍💼", bio: "Memimpin strategi, product development, dan client engagement. Fokus pada AI, automation, dan solusi teknologi properti." },
-  { name: "Kero", role: "Lead Developer & IT", img: "👨‍💻", bio: "Mengarsiteki solusi teknis dari frontend hingga infrastructure. Spesialis React, Node.js, dan hardware integration." },
-  { name: "Arsya", role: "Content Manager", img: "👨‍🎨", bio: "Mengelola strategi konten dan SEO. Memastikan pesan brand tersampaikan dengan tepat sasaran di setiap platform." },
-  { name: "Nadiva", role: "Lead Designer", img: "👩‍🎨", bio: "Merancang pengalaman visual yang profesional dan memorable untuk klien BangunTech." },
-  { name: "Shella", role: "Admin & Operations", img: "👩‍💼", bio: "Memastikan operasional berjalan lancar — mulai dari administrasi klien hingga koordinasi proyek." },
-];

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { SERVICES, LOGO } from "@/data";
 import Btn from "./Btn";
+import Icon from "./Icon";
+import { ChevronDown } from "lucide-react";
 
 const mainLinks = [
   { id: "tentang", l: "Tentang Kami" },
@@ -34,9 +36,9 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 20px rgba(26,111,255,0.07)" : "none",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-7 h-[92px] flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-7 h-[72px] flex items-center justify-between">
         <Link href="/">
-          <img src={LOGO} alt="BangunTech" className="h-20 max-md:h-14 cursor-pointer object-contain" />
+          <img src={LOGO} alt="BangunTech" className="h-12 max-md:h-9 cursor-pointer object-contain" />
         </Link>
 
         {/* Desktop */}
@@ -51,7 +53,7 @@ export default function Navbar() {
               className="bg-none border-none cursor-pointer font-sans text-[13.5px] font-semibold px-[18px] py-2 rounded-[8px] flex items-center gap-1 transition-colors duration-200"
               style={{ color: "#4A6080" }}
             >
-              Layanan <span className="text-[10px]">▾</span>
+              Layanan <ChevronDown size={14} className="text-[#8BA0BA]" />
             </button>
             {svcDD && (
               <div
@@ -71,9 +73,14 @@ export default function Navbar() {
                   <Link
                     key={s.id}
                     href={"/layanan/" + s.id}
-                    className="flex gap-[10px] items-center px-4 py-[10px] rounded-[8px] cursor-pointer transition-colors duration-150 hover:bg-[#F8FAFF] no-underline"
+                    className="flex gap-[12px] items-center px-4 py-[10px] rounded-[8px] cursor-pointer transition-colors duration-150 hover:bg-[#F8FAFF] no-underline"
                   >
-                    <span className="text-[18px]">{s.icon}</span>
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: `${s.col}12`, border: `1px solid ${s.col}22` }}
+                    >
+                      <Icon name={s.id} size={18} color={s.col} />
+                    </div>
                     <div>
                       <div className="text-[13px] font-bold" style={{ color: "#1A2B42" }}>
                         {s.title}
@@ -116,11 +123,11 @@ export default function Navbar() {
         </div>
 
         <button
-          className="lg:hidden bg-none border border-[#DDE6F5] rounded-[8px] px-[10px] py-[7px] cursor-pointer text-[16px]"
+          className="lg:hidden bg-none border border-[#DDE6F5] rounded-[8px] p-2 cursor-pointer text-[16px] flex items-center justify-center"
           style={{ color: "#1A2B42" }}
           onClick={() => setMob(!mob)}
         >
-          {mob ? "✕" : "☰"}
+          <Icon name={mob ? "close" : "menu"} size={20} />
         </button>
       </div>
 
@@ -147,7 +154,12 @@ export default function Navbar() {
               style={{ color: "#1A2B42" }}
               onClick={() => setMob(false)}
             >
-              <span>{s.icon}</span>
+              <div
+                className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
+                style={{ background: `${s.col}12` }}
+              >
+                <Icon name={s.id} size={16} color={s.col} />
+              </div>
               {s.title}
             </Link>
           ))}

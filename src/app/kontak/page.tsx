@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SERVICES } from "@/data";
 import Btn from "@/components/Btn";
 import Badge from "@/components/Badge";
+import Icon from "@/components/Icon";
 
 const inpStyle =
   "w-full px-4 py-3 rounded-[10px] border text-[14px] font-sans transition-colors duration-200 box-border" as const;
@@ -31,15 +32,15 @@ export default function KontakPage() {
   };
 
   const contactInfo = [
-    { ic: "📧", l: "Email", v: "hello@banguntech.id" },
-    { ic: "📱", l: "WhatsApp", v: "+62 812-3018-28" },
-    { ic: "📍", l: "Kantor", v: "Jakarta · Bandung · Remote-first" },
+    { ic: "mail", l: "Email", v: "hello@banguntech.id" },
+    { ic: "whatsapp", l: "WhatsApp", v: "+62 898-9891-828" },
+    { ic: "location", l: "Kantor", v: "Jakarta · Bandung · Remote-first" },
     {
-      ic: "🕐",
+      ic: "clock",
       l: "Jam Operasional",
       v: "Senin–Jumat, 09.00–18.00 WIB",
     },
-    { ic: "⚡", l: "Waktu Respons", v: "Kurang dari 4 jam (hari kerja)" },
+    { ic: "zap", l: "Waktu Respons", v: "Kurang dari 4 jam (hari kerja)" },
   ];
 
   return (
@@ -79,14 +80,14 @@ export default function KontakPage() {
                   className="flex gap-[14px] items-center"
                 >
                   <div
-                    className="w-10 h-10 rounded-[10px] bg-white flex items-center justify-center text-[18px] flex-shrink-0"
+                    className="w-10 h-10 rounded-[10px] bg-white flex items-center justify-center flex-shrink-0"
                     style={{
                       border: "1.5px solid #DDE6F5",
                       boxShadow:
                         "0 2px 20px rgba(26,111,255,0.09)",
                     }}
                   >
-                    {i.ic}
+                    <Icon name={i.ic} size={18} color="#1A6FFF" />
                   </div>
                   <div>
                     <div
@@ -117,7 +118,9 @@ export default function KontakPage() {
           >
             {sent ? (
               <div className="text-center py-12">
-                <div className="text-[60px] mb-4">✅</div>
+                <div className="w-16 h-16 rounded-full bg-[#22C55E15] flex items-center justify-center mx-auto mb-4">
+                  <Icon name="check" size={32} color="#22C55E" />
+                </div>
                 <h3
                   className="text-[24px] font-black mb-2"
                   style={{ color: "#1A2B42" }}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SERVICES } from "@/data";
 import Btn from "@/components/Btn";
 import Badge from "@/components/Badge";
+import Icon from "@/components/Icon";
 
 export default function LayananPage() {
   return (
@@ -46,13 +47,13 @@ export default function LayananPage() {
               }}
             >
               <div
-                className="w-[68px] h-[68px] rounded-[16px] flex items-center justify-center text-[32px]"
+                className="w-[68px] h-[68px] rounded-[16px] flex items-center justify-center"
                 style={{
                   background: `${s.col}12`,
                   border: `2px solid ${s.col}22`,
                 }}
               >
-                {s.icon}
+                <Icon name={s.id} size={32} color={s.col} />
               </div>
               <div>
                 <div className="flex items-center gap-[10px] mb-3">
@@ -81,10 +82,10 @@ export default function LayananPage() {
                   {s.desc}
                 </p>
                 <div
-                  className="mt-5 text-[12px] font-semibold"
+                  className="mt-5 text-[12px] font-semibold flex items-center gap-1.5"
                   style={{ color: "#8BA0BA" }}
                 >
-                  🎯 Target: {s.target}
+                  <Icon name="target" size={14} color="#8BA0BA" /> Target: {s.target}
                 </div>
               </div>
               <div className="text-right min-w-[160px] max-md:text-left">
